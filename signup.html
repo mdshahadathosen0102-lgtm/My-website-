@@ -5,13 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - SHAHADAT</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Modern Popup Styles */
+        .custom-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .modal-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 350px;
+            width: 85%;
+            box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
+        }
+        .modal-content p {
+            margin-bottom: 25px;
+            font-size: 1rem;
+            color: #fff;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- WebGL Particle Animation Canvas -->
     <canvas id="webgl"></canvas>
 
-    <!-- Header Navigation Section -->
+    <!-- Custom Alert Modal Structure -->
+    <div id="custom-alert" class="custom-modal">
+        <div class="modal-content">
+            <p id="alert-message"></p>
+            <button onclick="closeAlertAndRedirect()" class="btn" style="padding: 10px 30px; font-size: 0.9rem;">OK</button>
+        </div>
+    </div>
+
     <header>
         <a href="index.html" class="logo">SHAHADAT</a>
         <nav>
@@ -49,18 +85,27 @@
     </main>
 
     <script>
+        function showAlert(msg) {
+            document.getElementById('alert-message').innerText = msg;
+            document.getElementById('custom-alert').style.display = 'flex';
+        }
+
+        function closeAlertAndRedirect() {
+            document.getElementById('custom-alert').style.display = 'none';
+            window.location.href = "login.html"; // OK করার পর লগইন পেইজে নিয়ে যাবে
+        }
+
         function handleSignUp(event) {
             event.preventDefault();
             const username = document.getElementById('reg-username').value.trim();
             const password = document.getElementById('reg-password').value;
 
             if(username && password) {
-                // ব্রাউজারের মেমরিতে ডাটা সেভ করে রাখছি
                 localStorage.setItem('savedUsername', username);
                 localStorage.setItem('savedPassword', password);
                 
-                alert('Sign Up Successful! Now please Log In.');
-                window.location.href = "login.html"; // সাইন আপ শেষে লগইন পেইজে পাঠাবে
+                // ডিফল্ট alert বদলে কাস্টম পপআপ
+                showAlert('Sign Up Successful! Now please Log In.');
             }
         }
     </script>
