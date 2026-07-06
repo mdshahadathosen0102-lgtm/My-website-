@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - SHAHADAT</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+    // ইউজার লগইন না করে আসলে তাকে সরাসরি লগইন পেজে রিডাইরেক্ট করবে
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = "login.html";
+    }
+</script>
 </head>
 <body>
 
