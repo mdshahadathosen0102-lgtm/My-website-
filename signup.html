@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SHAHADAT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- WebGL Particle Animation Canvas -->
+    <canvas id="webgl"></canvas>
+
+    <!-- Header Navigation Section -->
+    <header>
+        <a href="index.html" class="logo">SHAHADAT</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Service</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content" style="justify-content: center; min-height: 100vh; padding-top: 80px;">
+        <div class="contact-container" style="max-width: 400px; text-align: center; padding: 40px 30px;">
+            <h2 style="color: #00e5ff; margin-bottom: 30px; font-size: 1.8rem; font-weight: 600;">Create Account</h2>
+            
+            <form onsubmit="handleSignUp(event)">
+                <div class="form-group" style="text-align: left;">
+                    <label for="reg-username">Choose Username</label>
+                    <input type="text" id="reg-username" required placeholder="e.g., shahadat123">
+                </div>
+                
+                <div class="form-group" style="text-align: left;">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" required placeholder="••••••••">
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 15px;">Sign Up</button>
+                
+                <p style="margin-top: 25px; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                    Already have an account? <a href="login.html" style="color: #00e5ff; text-decoration: none; font-weight: 500;">Log in</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function handleSignUp(event) {
+            event.preventDefault();
+            const username = document.getElementById('reg-username').value.trim();
+            const password = document.getElementById('reg-password').value;
+
+            if(username && password) {
+                // ব্রাউজারের মেমরিতে ডাটা সেভ করে রাখছি
+                localStorage.setItem('savedUsername', username);
+                localStorage.setItem('savedPassword', password);
+                
+                alert('Sign Up Successful! Now please Log In.');
+                window.location.href = "login.html"; // সাইন আপ শেষে লগইন পেইজে পাঠাবে
+            }
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="particles.js"></script>
+</body>
+</html>
