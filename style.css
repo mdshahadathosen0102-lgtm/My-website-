@@ -1,3 +1,76 @@
+/* Services Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ডেক্সটপে ২ কলাম দেখাবে */
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Service Card Design */
+.service-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* বাটনগুলোকে সবসময় কার্ডের নিচে সমান লাইনে রাখবে */
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 229, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 229, 255, 0.1);
+}
+
+.service-card h3 {
+    color: #00e5ff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* New Glowing Demo Button Styles */
+.demo-btn {
+    display: inline-block;
+    padding: 8px 24px;
+    color: #00e5ff;
+    text-decoration: none;
+    border: 1px solid #00e5ff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.demo-btn:hover {
+    background: #00e5ff;
+    color: #03030c; /* হোভার করলে লেখার কালার ব্যাকগ্রাউন্ডের মতো ডার্ক হয়ে যাবে */
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* মোবাইলে ১ কলামে একটির নিচে আরেকটি দেখাবে */
+    }
+}
 /* Premium Cyberpunk / Minimalist Glassmorphism Theme */
 * {
     margin: 0;
