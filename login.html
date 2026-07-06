@@ -38,9 +38,10 @@
 </head>
 <body>
 
+    <!-- 3D Particle Animation Canvas -->
     <canvas id="webgl"></canvas>
 
-    <!-- Custom Alert Modal Structure -->
+    <!-- Custom Alert Modal Structure (No Browser Domain Name) -->
     <div id="custom-alert" class="custom-modal">
         <div class="modal-content">
             <p id="alert-message"></p>
@@ -48,6 +49,7 @@
         </div>
     </div>
 
+    <!-- Header Navigation Section -->
     <header>
         <a href="index.html" class="logo">SHAHADAT</a>
         <nav>
@@ -60,6 +62,7 @@
         </nav>
     </header>
 
+    <!-- Login Form Main Container -->
     <main class="main-content" style="justify-content: center; min-height: 100vh; padding-top: 80px;">
         <div class="contact-container" style="max-width: 400px; text-align: center; padding: 40px 30px;">
             <h2 style="color: #00e5ff; margin-bottom: 30px; font-size: 1.8rem; font-weight: 600;">Welcome Back</h2>
@@ -84,34 +87,46 @@
         </div>
     </main>
 
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 MD SHAHADAT. সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <!-- JavaScript for Authentication & Custom Alerts -->
     <script>
-        // Custom Alert Logic
+        // কাস্টম পপআপ দেখানোর ফাংশন
         function showAlert(msg) {
             document.getElementById('alert-message').innerText = msg;
             document.getElementById('custom-alert').style.display = 'flex';
         }
 
+        // কাস্টম পপআপ বন্ধ করার ফাংশন
         function closeAlert() {
             document.getElementById('custom-alert').style.display = 'none';
         }
 
+        // লগইন হ্যান্ডেল করার মেইন লজিক
         function handleLogin(event) {
             event.preventDefault();
             const inputUser = document.getElementById('username').value.trim();
             const inputPass = document.getElementById('password').value;
 
+            // Sign Up পেজ থেকে সেভ হওয়া ডাটা তুলে আনা
             const storedUser = localStorage.getItem('savedUsername');
             const storedPass = localStorage.getItem('savedPassword');
 
             if (inputUser === storedUser && inputPass === storedPass) {
+                // ব্রাউজারে লগইন সেশন ফ্ল্যাগ 'true' করে দেওয়া হলো যেন অন্য পেজে ঢুকতে দেয়
+                localStorage.setItem('isLoggedIn', 'true'); 
                 window.location.href = "services.html"; 
             } else {
-                // ডিফল্ট alert বদলে কাস্টম পপআপ কল করা হলো
+                // ভুল হলে কাস্টম পপআপ মোডাল কল হবে
                 showAlert('Invalid Username or Password! Please Sign Up first.');
             }
         }
     </script>
 
+    <!-- Three.js Library and Animation Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="particles.js"></script>
 </body>
