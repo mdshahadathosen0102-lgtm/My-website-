@@ -4,57 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - SHAHADAT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- WebGL Particle Animation Canvas -->
     <canvas id="webgl"></canvas>
 
-    <!-- Header Navigation Section -->
     <header>
         <a href="index.html" class="logo">SHAHADAT</a>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html" >Service</a></li>
-                <li><a href="about.html" >About us</a></li>
-                <li><a href="contact.html" >contact us</a></li>
+                <li><a href="services.html">Service</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Welcome to our website</h1>
-        <p>We create modern, responsive, and excellent websites for your business.</p>
-        <a href="login.html" class="btn">Start</a>
+    <main class="main-content">
+        <section class="hero-section">
+            <h1>Welcome to our website</h1>
+            <p>We create modern, responsive, and excellent websites for your business.</p>
+            <!-- বাটন ফিক্স করা হয়েছে -->
+            <a href="services.html" class="btn">Explore Services</a>
+        </section>
+    </main>
 
-    </section>
-
-    <section style="padding: 20px 8% 80px 8%;">
-        <div class="grid-container">
-            <div class="card">
-                <h3>Modern design</h3>
-                <p>Each layout is designed with the latest trends and a user-friendly interface in mind.</p>
-            </div>
-            <div class="card">
-                <h3>Responsive on all devices</h3>
-                <p>Your website will look perfect on all screen sizes—mobile, tablet, or desktop.</p>
-            </div>
-            <div class="card">
-                <h3>High-speed</h3>
-                <p>Thanks to code optimization, the website will load in the blink of an eye, which will aid in SEO.
-</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
     <footer>
+        <!-- সোশ্যাল মিডিয়া আইকন যুক্ত করা হয়েছে -->
+        <div class="social-links">
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
         <p>&copy; 2026 MD SHAHADAT. সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <!-- Three.js Library and Animation Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="particles.js"></script>
 </body>
