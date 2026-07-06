@@ -3,61 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us - SHAHADAT</title>
+    <title>About Us - SHAHADAT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-<script>
-    // ইউজার লগইন না করে আসলে তাকে সরাসরি লগইন পেজে রিডাইরেক্ট করবে
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
-        window.location.href = "login.html";
-    }
-</script>
+    <script>
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 <body>
 
-    <!-- WebGL Particle Animation Canvas -->
     <canvas id="webgl"></canvas>
 
-    <!-- Header Navigation Section -->
     <header>
         <a href="index.html" class="logo">SHAHADAT</a>
         <nav>
             <ul>
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="services.html" >Service</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Service</a></li>
                 <li><a href="about.html" class="active">About us</a></li>
-                <li><a href="contact.html" >Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="main-content">
-        <h2 class="section-title">About us</h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); padding: 40px; border-radius: 16px;"><div class="about-container"> 
-    
-    <!-- আপনার নতুন ফটো কোড এখানে বসলো -->
-    <div style="text-align: center; margin-bottom: 25px;">
-        <img src="IMG_20260701_192610.jpg" alt="Shahadat" style="width: 140px; height: 140px; border-radius: 50%; border: 3px solid #00e5ff; box-shadow: 0 0 25px rgba(0, 229, 255, 0.6); object-fit: cover; object-position: center;">
-    </div>
+        <div class="section-title">
+            <h2>About me</h2>
+            <div class="title-line"></div>
+        </div>
 
-    
+        <div class="about-box">
+            <!-- আপনার ছবি ডাইনামিক সোর্স দেওয়া হয়েছে -->
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400" class="profile-circle" alt="Shahadat Profile">
+            
+            <!-- টোন পরিবর্তন করে একক ফ্রিল্যান্সার করা হয়েছে -->
+            <h3>Who am I?</h3>
+            <p>I am a professional Web Developer and Designer. I specialize in crafting elegant, modern, and pixel-perfect digital solutions tailored for your business needs.</p>
+            
+            <h3>Our Goal</h3>
+            <p>To reach a global audience with your business and strengthen your online presence through a modern, attractive website.</p>
+            
+            <!-- ডাউনলোড সিভি বাটন -->
+            <a href="#" class="btn" style="margin-top: 15px;"><i class="fas fa-download"></i> Download CV</a>
 
-     <h3 style="margin-bottom: 20px; color: #00e5ff;">Who are we?</h3>
-            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 25px; line-height: 1.8;">
-                We are a team of young, skilled web developers and designers dedicated to driving the digital transformation of businesses. Our goal is to provide top-quality web solutions at affordable prices.
-            </p>
-            <h3 style="margin-top: 30px; margin-bottom: 20px; color: #00e5ff;">Our Goal</h3>
-            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.8;">
-                To reach a global audience with your business and strengthen your online presence through a modern, attractive website.
-            </p>
+            <!-- স্কিল সেকশন যুক্ত করা হয়েছে -->
+            <div class="skills-container">
+                <h3 style="text-align: center; margin-bottom: 25px;">My Professional Skills</h3>
+                
+                <div class="skill-bar">
+                    <div class="skill-info"><span>HTML & CSS</span><span>95%</span></div>
+                    <div class="skill-bg"><div class="skill-progress" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>JavaScript</span><span>85%</span></div>
+                    <div class="skill-bg"><div class="skill-progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>React.js</span><span>75%</span></div>
+                    <div class="skill-bg"><div class="skill-progress" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info"><span>WordPress</span><span>90%</span></div>
+                    <div class="skill-bg"><div class="skill-progress" style="width: 90%;"></div></div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <!-- Footer Section -->
     <footer>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
         <p>&copy; 2026 MD SHAHADAT. সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <!-- Three.js Library and Animation Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="particles.js"></script>
 </body>
