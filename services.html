@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service - SHAHADAT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- লগইন না করে ঢোকা বন্ধ করার গার্ড স্ক্রিপ্ট -->
     <script>
-    // ইউজার লগইন না করে আসলে তাকে সরাসরি লগইন পেজে রিডাইরেক্ট করবে
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
-        window.location.href = "login.html";
-    }
-</script>
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 <body>
 
-    <!-- WebGL Particle Animation Canvas -->
     <canvas id="webgl"></canvas>
 
-    <!-- Header Navigation Section -->
     <header>
         <a href="index.html" class="logo">SHAHADAT</a>
         <nav>
@@ -30,77 +29,70 @@
         </nav>
     </header>
 
-    <!-- MAIN CONTENT SECTION (Fixed Duplication) -->
-    <main class="main-content" style="min-height: 100vh; padding-top: 100px; padding-bottom: 50px;">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="color: #fff; font-size: 2rem; letter-spacing: 2px;">OUR SERVICES</h2>
-            <div style="width: 50px; height: 3px; background: #00e5ff; margin: 10px auto 0; box-shadow: 0 0 10px #00e5ff;"></div>
+    <main class="main-content">
+        <div class="section-title">
+            <h2>OUR SERVICES</h2>
+            <div class="title-line"></div>
         </div>
 
-        <!-- Single Grid Container -->
         <div class="services-grid">
             
             <!-- ১. Web design & Development -->
             <div class="service-card">
+                <i class="fas fa-code"></i> <!-- সার্ভিস আইকন -->
                 <h3>Web design & Development</h3>
                 <p>আপনার ব্র্যান্ডের জন্য সম্পূর্ণ কাস্টমাইজড এবং আধুনিক ওয়েবসাইট তৈরি করে থাকি.</p>
-                
-                <!-- ডেমো ইমেজ (হাইট ফিক্সড করা হয়েছে) -->
-                <div class="demo-img-wrapper" style="width: 100%; height: 180px; overflow: hidden; border-radius: 8px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
-                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=600&auto=format&fit=crop" alt="Web Design Demo" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;">
+                <div class="demo-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=600&auto=format&fit=crop" alt="Web Design Demo">
                 </div>
-                
-                <a href="#" class="demo-btn">View Project</a>
+                <a href="#" class="btn">View Project</a>
             </div>
             
             <!-- ২. E-commerce -->
             <div class="service-card">
+                <i class="fas fa-shopping-cart"></i> <!-- সার্ভিস আইকন -->
                 <h3>E-commerce</h3>
                 <p>সহজে প্রোডাক্ট ম্যানেজমেন্ট এবং পেমেন্ট গেটওয়েসহ প্রফেশনাল অনলাইন শপ তৈরি.</p>
-                
-                <!-- ডেমো ইমেজ (হাইট ফিক্সড করা হয়েছে) -->
-                <div class="demo-img-wrapper" style="width: 100%; height: 180px; overflow: hidden; border-radius: 8px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
-                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=600&auto=format&fit=crop" alt="E-commerce Demo" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;">
+                <div class="demo-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=600&auto=format&fit=crop" alt="E-commerce Demo">
                 </div>
-                
-                <a href="#" class="demo-btn">View Project</a>
+                <a href="#" class="btn">View Project</a>
             </div>
             
             <!-- ৩. UI/UX design -->
             <div class="service-card">
+                <i class="fas fa-palette"></i> <!-- সার্ভিস আইকন -->
                 <h3>UI/UX design</h3>
                 <p>ব্যবহারকারীদের জন্য আকর্ষণীয় ও সহজে ব্যবহারযোগ্য ইন্টারফেস বা লেআউট প্রোটোটাইপিং.</p>
-                
-                <!-- ডেমো ইমেজ (হাইট ফিক্সড করা হয়েছে) -->
-                <div class="demo-img-wrapper" style="width: 100%; height: 180px; overflow: hidden; border-radius: 8px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
-                    <img src="https://images.unsplash.com/photo-1618788372246-79faff0c3742?q=80&w=600&auto=format&fit=crop" alt="UI/UX Demo" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;">
+                <div class="demo-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1618788372246-79faff0c3742?q=80&w=600&auto=format&fit=crop" alt="UI/UX Demo">
                 </div>
-                
-                <a href="#" class="demo-btn">View Project</a>
+                <a href="#" class="btn">View Project</a>
             </div>
             
             <!-- ৪. SEO&Digital marketing -->
             <div class="service-card">
+                <i class="fas fa-chart-line"></i> <!-- সার্ভিস আইকন -->
                 <h3>SEO&Digital marketing</h3>
                 <p>সার্চ ইঞ্জিনে আপনার ওয়েবসাইটটিকে সবার উপরে নিয়ে আসতে কার্যকরী এসইও সার্ভিস.</p>
-                
-                <!-- ডেমো ইমেজ (হাইট ফিক্সড করা হয়েছে) -->
-                <div class="demo-img-wrapper" style="width: 100%; height: 180px; overflow: hidden; border-radius: 8px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="SEO Demo" style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease;">
+                <div class="demo-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="SEO Demo">
                 </div>
-                
-                <a href="#" class="demo-btn">View Project</a>
+                <a href="#" class="btn">View Project</a>
             </div>
 
         </div>
     </main>
 
-    <!-- Footer Section -->
     <footer>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
         <p>&copy; 2026 MD SHAHADAT. সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <!-- Three.js Library and Animation Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="particles.js"></script>
 </body>
