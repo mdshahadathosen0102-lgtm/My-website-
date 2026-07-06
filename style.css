@@ -9,7 +9,7 @@
 body, html {
     width: 100%;
     min-height: 100vh;
-    background-color: #03030c;
+    background: transparent; /* বডি ব্যাকগ্রাউন্ড ট্রান্সপারেন্ট করে দিন */
     color: #ffffff;
     overflow-x: hidden;
 }
@@ -23,7 +23,9 @@ body, html {
     height: 100vh;
     z-index: -1;
     pointer-events: all;
+    background-color: #03030c; /* কালো ব্যাকগ্রাউন্ডটি এখানে সেট করুন */
 }
+
 
 /* Navigation Bar */
 header {
