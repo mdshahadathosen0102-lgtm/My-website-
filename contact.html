@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ - MyWebsite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- WebGL Particle Animation Canvas -->
+    <canvas id="webgl"></canvas>
+
+    <!-- Header Navigation Section -->
+    <header>
+        <a href="index.html" class="logo">MyWebsite</a>
+        <nav>
+            <ul>
+                <li><a href="index.html" >হোম</a></li>
+                <li><a href="services.html" >সার্ভিস</a></li>
+                <li><a href="about.html" >আমাদের সম্পর্কে</a></li>
+                <li><a href="contact.html" class="active">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h2 class="section-title">যোগাযোগ করুন</h2>
+        <div class="contact-container">
+            <!-- Free Backendless Form API Integration via Web3Forms -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+                
+                <!-- Replace this access_key value with your actual free key from web3forms.com -->
+                <input type="hidden" name="access_key" value="e8a89ba4-859a-4018-a2cc-5bff71b5cd7b">
+                
+                <!-- Anti-spam honeypot field -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <div class="form-group">
+                    <label for="name">আপনার নাম</label>
+                    <input type="text" id="name" name="name" required placeholder="এখানে নাম লিখুন">
+                </div>
+                <div class="form-group">
+                    <label for="email">ইমেইল ঠিকানা</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">বার্তা</label>
+                    <textarea id="message" name="message" required placeholder="আপনার মতামত বা প্রশ্ন এখানে লিখুন..."></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">send</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 MD SHAHADAT. সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <!-- Three.js Library and Animation Link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="particles.js"></script>
+</body>
+</html>
