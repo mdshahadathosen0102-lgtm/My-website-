@@ -4,52 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In - SHAHADAT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Custom Modern Popup Styles */
         .custom-modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.7);
-            display: none; /* শুরুতে হাইড থাকবে */
-            justify-content: center;
-            align-items: center;
+            display: none;
+            justify-content: center; align-items: center;
             z-index: 9999;
         }
         .modal-content {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-            max-width: 350px;
-            width: 85%;
+            padding: 30px; border-radius: 16px;
+            text-align: center; max-width: 350px; width: 85%;
             box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
         }
-        .modal-content p {
-            margin-bottom: 25px;
-            font-size: 1rem;
-            color: #fff;
-            line-height: 1.5;
-        }
+        .modal-content p { margin-bottom: 25px; color: #fff; }
     </style>
 </head>
 <body>
 
-    <!-- 3D Particle Animation Canvas -->
     <canvas id="webgl"></canvas>
 
-    <!-- Custom Alert Modal Structure (No Browser Domain Name) -->
     <div id="custom-alert" class="custom-modal">
         <div class="modal-content">
             <p id="alert-message"></p>
-            <button onclick="closeAlert()" class="btn" style="padding: 10px 30px; font-size: 0.9rem;">OK</button>
+            <button onclick="closeAlert()" class="btn" style="padding: 8px 25px;">OK</button>
         </div>
     </div>
 
-    <!-- Header Navigation Section -->
     <header>
         <a href="index.html" class="logo">SHAHADAT</a>
         <nav>
@@ -57,76 +44,62 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Service</a></li>
                 <li><a href="about.html">About us</a></li>
-                <li><a href="contact.html">contact us</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Login Form Main Container -->
-    <main class="main-content" style="justify-content: center; min-height: 100vh; padding-top: 80px;">
-        <div class="contact-container" style="max-width: 400px; text-align: center; padding: 40px 30px;">
-            <h2 style="color: #00e5ff; margin-bottom: 30px; font-size: 1.8rem; font-weight: 600;">Welcome Back</h2>
+    <main class="main-content" style="min-height: 85vh; justify-content: center;">
+        <div class="contact-form-card" style="max-width: 400px; width: 100%; text-align: center;">
+            <h2 style="color: #00e5ff; margin-bottom: 25px; font-weight: 600;">Welcome Back</h2>
             
             <form onsubmit="handleLogin(event)">
-                <div class="form-group" style="text-align: left;">
+                <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" required placeholder="Enter your username">
+                    <input type="text" id="username" required placeholder="Enter username">
                 </div>
                 
-                <div class="form-group" style="text-align: left;">
+                <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" required placeholder="••••••••">
                 </div>
 
-                <button type="submit" class="btn" style="width: 100%; margin-top: 15px;">Log In</button>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Log In</button>
                 
-                <p style="margin-top: 25px; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
-                    Don't have an account? <a href="signup.html" style="color: #00e5ff; text-decoration: none; font-weight: 500;">Sign up</a>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(255,255,255,0.5);">
+                    Don't have an account? <a href="signup.html" style="color: #00e5ff; text-decoration: none;">Sign up</a>
                 </p>
             </form>
         </div>
     </main>
 
-    <!-- Footer Section -->
     <footer>
         <p>&copy; 2026 MD SHAHADAT. সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <!-- JavaScript for Authentication & Custom Alerts -->
     <script>
-        // কাস্টম পপআপ দেখানোর ফাংশন
         function showAlert(msg) {
             document.getElementById('alert-message').innerText = msg;
             document.getElementById('custom-alert').style.display = 'flex';
         }
-
-        // কাস্টম পপআপ বন্ধ করার ফাংশন
         function closeAlert() {
             document.getElementById('custom-alert').style.display = 'none';
         }
-
-        // লগইন হ্যান্ডেল করার মেইন লজিক
         function handleLogin(event) {
             event.preventDefault();
             const inputUser = document.getElementById('username').value.trim();
             const inputPass = document.getElementById('password').value;
-
-            // Sign Up পেজ থেকে সেভ হওয়া ডাটা তুলে আনা
             const storedUser = localStorage.getItem('savedUsername');
             const storedPass = localStorage.getItem('savedPassword');
 
             if (inputUser === storedUser && inputPass === storedPass) {
-                // ব্রাউজারে লগইন সেশন ফ্ল্যাগ 'true' করে দেওয়া হলো যেন অন্য পেজে ঢুকতে দেয়
                 localStorage.setItem('isLoggedIn', 'true'); 
                 window.location.href = "services.html"; 
             } else {
-                // ভুল হলে কাস্টম পপআপ মোডাল কল হবে
                 showAlert('Invalid Username or Password! Please Sign Up first.');
             }
         }
     </script>
-
-    <!-- Three.js Library and Animation Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="particles.js"></script>
 </body>
