@@ -4,68 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - SHAHADAT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script>
-    // ইউজার লগইন না করে আসলে তাকে সরাসরি লগইন পেজে রিডাইরেক্ট করবে
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
-        window.location.href = "login.html";
-    }
-</script>
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 <body>
 
-    <!-- WebGL Particle Animation Canvas -->
     <canvas id="webgl"></canvas>
 
-    <!-- Header Navigation Section -->
     <header>
         <a href="index.html" class="logo">SHAHADAT</a>
         <nav>
             <ul>
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="services.html" >service</a></li>
-                <li><a href="about.html" >About us</a></li>
-                <li><a href="contact.html" class="active">contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Service</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="main-content">
-        <h2 class="section-title">Contract here</h2>
-        <div class="contact-container">
-            <!-- Free Backendless Form API Integration via Web3Forms -->
-            <form action="https://api.web3forms.com/submit" method="POST">
-                
-                <!-- Replace this access_key value with your actual free key from web3forms.com -->
-                <input type="hidden" name="access_key" value="e8a89ba4-859a-4018-a2cc-5bff71b5cd7b">
-                
-                <!-- Anti-spam honeypot field -->
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        <!-- বানান ঠিক করা হয়েছে -->
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <div class="title-line"></div>
+        </div>
 
-                <div class="form-group">
-                    <label for="name">Your name?</label>
-                    <input type="text" id="name" name="name" required placeholder="write your name">
+        <div class="contact-layout">
+            <!-- ডিরেক্ট কন্টাক্ট ইনফো কার্ড -->
+            <div class="contact-info-card">
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+880 17XX-XXXXXX</p>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>shahadat@example.com</p>
                 </div>
-                <div class="form-group">
-                    <label for="message">বার্তা</label>
-                    <textarea id="message" name="message" required placeholder="Write here your query ..."></textarea>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Dhaka, Bangladesh</p>
                 </div>
+            </div>
 
-                <button type="submit" class="btn" style="width: 100%;">send</button>
-            </form>
+            <!-- ফর্ম কার্ড -->
+            <div class="contact-form-card">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your name?</label>
+                        <input type="text" id="name" placeholder="write your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="name@example.com" required>
+                    </div>
+                    
+                    <!-- বাংলা কোয়েরি ফিল্ড ঠিক করা হয়েছে -->
+                    <div class="form-group">
+                        <label for="msg">Your Message</label>
+                        <textarea id="msg" rows="5" placeholder="Write here your message..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
         </div>
     </main>
 
-    <!-- Footer Section -->
     <footer>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
         <p>&copy; 2026 MD SHAHADAT. সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <!-- Three.js Library and Animation Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="particles.js"></script>
 </body>
